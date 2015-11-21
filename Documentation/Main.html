@@ -1,0 +1,43 @@
+<title>Scene Drawing and Camera Manipulation</title>
+<head><h1><center>Scene Drawing and Camera Manipulation</center></h1></head>
+
+<body>
+<b>Objective:</b>
+<p>
+Our assignment involved the drawing of an aesthetically beautiful scene with camera functionality for zooming, panning and rolling the camera.
+We were not allowed to use textures, so we could rely only on solid colouring, lighting and material properties to lend an aesthetic quality to the scene.
+</p>
+
+<b>Why does our assignment stand out?</b>
+<p>
+Firstly, <b>interactive objects</b>. Various objects can be toggled on and off in the scene, and this toggling is smart. Interaction with a particular object takes place only when within reasonable distance of it.
+</p>
+<p>
+Secondly, we additionally implement movement ability for the camera - so you can move forwards, backwards, strafe left and right; much like you would in a First Person shooter. Oh, you can move upwards and downwards too, if that was necessary.
+</p>
+
+<b>Details of implementation</b>
+<ol>
+<li><b>Camera Movement : </b>Global variables tracking the camera position and direction vector are maintained. Simple vector math is used to update the position based on the current direction. Forward, backward and sideways movement is restricted to a 2D plane. Height of this plane can be varied.</li>
+<li><b>Camera Manipulation : </b>We allow the camera to pan 360&deg; (both yaw and pitch), roll from -45&deg; to 45&deg; (although it doesn't make a lot of sense here) and zoom in and out varying the field of view angle from 1&deg; to 45&deg;. All this is done by varying global angles representing rotation around the axes. Zooming is implemented by changing the field of view angle in the perspective setup function</li>
+<li><b>House drawing and furnishing : </b>We first wrote elementary functions to draw a wall, door, bed, table  etc. with a given colour and size. We now use this in a <b>push matrix-transform-draw-pop matrix</b> pipeline to avoid cumbersome coordinate computations. The push-pop matrix style allows us to specify coordinates in convenient frame of references.
+</ol>
+
+<a href="Scene.html">Have a look at the finished scene here.</a>
+
+<b><h2>Features of Interest</h2></b>
+<p>These showcase the camera functionality on a mock scene.</p>
+<p>
+<img src="Shot1.png" width="600" align="left"></img>
+<img src="Shot2.png" width="600" align="right"></img>
+</p>
+<br></br>
+<p style="clear:both;"><left>Here's showing off the zoom functionality.</left></p>
+<img src="Zoom1.png" width="600" align="left"></img>
+<img src="Zoom2.png" width="600" align="right"></img>
+<br></br>
+<p style="clear:both;">Here's showing off the roll functionality. And a panned establishment shot</p>
+<img src="Roll.png" width="600" align="left"></img>
+<img src="LongShot.png" width="600" align="right"></img>
+</body>
+
