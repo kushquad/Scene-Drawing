@@ -1,3 +1,7 @@
+#include<fstream>
+
+using namespace std;
+
 //Toggle variables for interactive objects
 int radioon=0;
 int doorrot[3] = {0,0,0};
@@ -8,24 +12,18 @@ int fanon=0;
 void drawBoomBox()
 {	
 	//Communication code with Python module to play a song
-	static int radiowork = 0;
-	if(interact)
-		radioon ^= 1;
-	
-	/*	
-	if(radiowork^radioon)
-	{
-		if(!radioon)
-			remove("radiosignal.txt");
-		else
+	static int radioon = 0;
+	if(interact && euclidean(15,3,-10)<16)
+		radioon ^=1;
+		
+	if(!radioon)
+		remove("radiosignal.txt");
+	else
 		{
 			ofstream file;
 			file.open("radiosignal.txt",fstream::out);
 			file.close();
 		}
-		radiowork = radioon;
-	}
-	*/
 
 	// Speakers
 	glPushMatrix();

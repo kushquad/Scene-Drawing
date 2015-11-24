@@ -32,14 +32,14 @@ float Yangle = 0.0f;
 float axisangle = 0.0f;
 
 // Camera position in 3D space
-float x = -25.0f;
-float z = 25.0f;
-float y = 300.0f;
+float x = 2.0f;
+float z = 10.0f;
+float y = 1.0f;
 
 // Actual vector representing the camera's direction
-float vx =  0.007f;
-float vz = -0.007f;
-float vy = -0.986f;
+float vx = 0.0f;
+float vz = -1.0f;
+float vy = 0.0f;
 
 // the key states. These variables will be zero
 //when no key is being presses
@@ -57,7 +57,7 @@ float rollamount = 0;
 float fov = 60.0;
 int interact = 0;
 int ceilingon=1;
-int parachutejump = 1;
+int parachutejump = 0;
 
 //Calculate the euclidean square distance between two points
 float euclidean(float x1, float y1, float z1)
